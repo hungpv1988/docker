@@ -1,0 +1,13 @@
+- Build docker image
+  To simly build a docker image: Docker build .
+  To build and tag: Docker build -t docker-image-name .
+  If want to build an image and push to  your hub, use your usename + "/" before the docker image name: Docker build -t hungpv1988/docker-image-name
+  https://docs.docker.com/guides/docker-concepts/building-images/writing-a-dockerfile/
+  
+   
+- Run a docker: docker run -d -p 8080:8080 docker-image-name 
+  "-p" is to map docker port and host. We could ignore host port if needed.
+  "-d" is to say that docker run as a background process -> need to verify.
+ https://docs.docker.com/guides/docker-concepts/running-containers/publishing-ports/   
+
+- Read guidelines here https://docs.google.com/document/d/1UXuGc4Obn9gEowUHV-t4K6ENXG4Zl4wIYHJB1m_alK4/edit
