@@ -1,21 +1,38 @@
 const express = require('express')
 // for express to capture request body
 var bodyParser  =  require("body-parser");
+const os = require('os');
 const app = express();
 
 // to capture application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// to capture json data (form-data in post man)
+// to capture json data 
 app.use(bodyParser.json());
-
+;
 // to capture raw data (in postman)
 app.use(bodyParser.raw());
 
-const port = 4000
+const port = 8999;
 
 app.get('/', (request, response) => {
-  response.send('Welcome to the best todos list in the world!')
+  //response.send('Welcome to the best todos list in the world! at ');
+  response.json({
+      serviceName: 'hungpv1988',
+      contact: "hungpv1988@gmail.com",
+      clientIp:  request.header('x-forwared-for'),
+      containerIp: request.socket.localAddress,
+      containerName: os.hostname(),
+      elbIP: request.socket.remoteAddress
+    }
+  )
+})
+
+app.get('/ping', (request, response) => {
+  response.json({
+      message: 'service runs well'
+    }
+  )
 })
 
 app.listen(port, () => {
