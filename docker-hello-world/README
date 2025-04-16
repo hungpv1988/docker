@@ -5,8 +5,8 @@
   https://docs.docker.com/guides/docker-concepts/building-images/writing-a-dockerfile/
   
    
-- Run a docker: docker run -d -p 8080:8080 docker-image-name 
-  "-p" is to map docker port and host. We could ignore host port if needed.
+- Run a docker: docker run -d -p 8081:8080 docker-image-name 
+  "-p" is to map docker port and host. We could ignore host port if needed. In this case, 8081 is computer port and 8080 is container port
   "-d" is to say that docker run as a background process -> need to verify.
  https://docs.docker.com/guides/docker-concepts/running-containers/publishing-ports/   
 
